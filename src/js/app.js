@@ -1,3 +1,4 @@
+import { right } from "@popperjs/core";
 import "../style/index.css";
 
 /**
@@ -33,11 +34,21 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
+          <h1>${variables.name ? variables.name : `introduce tu nombre`} ${
+    variables.lastName ? variables.lastName : `introduce tu apellido`
+  }</h1>
+          <h2>${variables.role ? variables.role : `que rol tienes?`}</h2>
+          <h3>${variables.city ? variables.city : `Introduce tu ciudad`},
+          ${variables.country ? variables.country : `introduce tu país`}
+          </h3>
+          <ul class= "${
+            variables.socialMediaPosition === "position-right"
+              ? "position-right"
+              : "position-left"
+          }">
+            <li><a href="https://twitter.com/${
+              variables.twitter
+            }"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>

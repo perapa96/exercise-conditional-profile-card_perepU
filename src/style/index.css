@@ -32,6 +32,8 @@
   overflow: hidden;
 }
 .widget .cover img {
+  margin-right: 2px;
+  margin-left: 2px;
   width: 100%;
   height: auto;
   min-height: 160px;
